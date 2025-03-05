@@ -1,1 +1,0 @@
-# SUSE Edge support matrix

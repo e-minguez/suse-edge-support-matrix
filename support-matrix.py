@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-import re, json
+import re, json, datetime
 import requests
 from bs4 import BeautifulSoup
+from jinja2 import Template
 
 
 def get_release_sections(url):
@@ -203,7 +204,6 @@ def get_urls(docsurl):
         return None
 
 
-
 def get_all_releases_data():
     """Retrieves and processes release data from SUSE documentation pages."""
 
@@ -232,5 +232,38 @@ def get_all_releases_data():
 
     return all_releases
 
+def generate_html(template_file, output_file, data):
+    """
+    Generates HTML from a Jinja template and data.
+
+    Args:
+        template_file: Path to the Jinja template file.
+        output_file: Path to the output HTML file.
+        data: Dictionary containing data to render the template.
+
+    Returns:
+        The path of the generated HTML file, or an empty string on error.
+    """
+    try:
+        with open(template_file, 'r', encoding='utf-8') as file:
+            template_content = file.read()
+
+        template = Template(template_content)
+        generation_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
+        rendered_html = template.render(data=data,generation_time=generation_time)
+
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(rendered_html)
+
+        return output_file
+
+    except IOError as e:
+        print(f"Error generating HTML: {e}")
+        return ""
+    except Exception as e:
+        print(f"An unexpected error occurred during HTML generation: {e}")
+        return ""
+
 if __name__ == "__main__":
-    print(get_all_releases_data())
+    data=get_all_releases_data()
+    generate_html('template.html.j2','index.html',data)

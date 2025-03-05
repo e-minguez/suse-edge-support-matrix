@@ -86,69 +86,151 @@ def extract_data_from_table(table):
 
 
 def get_dicts_by_name(data):
-    result = {}
+    """
+    Creates a dictionary where keys are "Name" values from a list of dictionaries.
+
+    Args:
+        data: A list of dictionaries, where each dictionary should have a "Name" key.
+
+    Returns:
+        A dictionary where keys are "Name" values and values are the corresponding dictionaries.
+    """
+    if not isinstance(data, list):
+        raise TypeError("Input data must be a list.")
+
+    result: Dict[str, Dict[str, Any]] = {}
     for item in data:
+        if not isinstance(item, dict):
+            continue #skip non dict items
         if "Name" in item:
             name = item["Name"]
             result[name] = item
+        else:
+            print("Item missing 'Name' key: %s", item)
     return result
 
 
 def get_release_data(url):
-    release_sections = get_release_sections(url)
-    if release_sections:
+    """ Retrieves release data from a given URL. """
+    try:
+        release_sections = get_release_sections(url)
+
+        if not release_sections:
+            print(f"No release sections found for {url}")
+            return None
+
         releases_data = []
         for section in release_sections:
-            # Release version is there as "Release X.Y.Z"
-            release = section["data-id-title"].split()[1]
-            components = get_components_versions_subsection(section)
-            if components:
-                # Release URL can be crafted
-                release_url = f"{url}#{components['id']}"
-                tables = get_components_versions_tables_from_section(components)
-                if tables:
-                    for table in tables:
-                        data = extract_data_from_table(table)
-                else:
-                    print(
-                        f"No matching tables found in section {section['data-id-title']}"
-                    )
-            releases_data.append({"Version": release, "URL": release_url, "Data": data})
+            try:
+                release_title = section.get("data-id-title")
+                if not release_title:
+                    print(f"data-id-title not found in section for {url}")
+                    continue
+
+                parts = release_title.split()
+                if len(parts) < 2:
+                    print(f"Invalid release title format: {release_title} in {url}")
+                    continue
+                release_version = parts[1]
+
+                components_section = get_components_versions_subsection(section)
+
+                if not components_section:
+                    print(f"No components section found for {release_title} in {url}")
+                    continue
+
+                release_url = f"{url}#{components_section['id']}"
+
+                tables = get_components_versions_tables_from_section(components_section)
+
+                if not tables:
+                    print(f"No matching tables found in section {release_title} in {url}")
+                    releases_data.append({"Version": release_version, "URL": release_url, "Data": []}) #append empty data
+                    continue
+
+                all_table_data = [] #create a list to store data from all tables
+                for table in tables:
+                    table_data = extract_data_from_table(table)
+                    if table_data:
+                        all_table_data.extend(table_data)
+
+                releases_data.append({"Version": release_version, "URL": release_url, "Data": all_table_data})
+
+            except Exception as inner_e:
+                print(f"Error processing release section in {url}: {inner_e}")
+                continue
+
         return releases_data
-    else:
-        print("No release sections found.")
+
+    except Exception as outer_e:
+        print(f"Error retrieving release data from {url}: {outer_e}")
+        return None
 
 
 def get_urls(docsurl):
+    """Retrieves URLs of the SUSE Edge docs from SUSE documentation pages."""
     try:
-        urls = []
-        response = requests.get(docsurl,timeout=30)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.content, "html.parser")
+        response = requests.get(docsurl, timeout=30)
+        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
 
+        soup = BeautifulSoup(response.content, "html.parser")
         edge_docs = soup.find("div", attrs={"data-product-family": "SUSE Edge"})
-        edge_docs_urls = json.loads(edge_docs["data-supported-versions"])
-        for i in edge_docs_urls:
-            urls.append(
-                f"https://documentation.suse.com/suse-edge/{i['name']}/html/edge/id-release-notes.html"
-            )
+
+        if not edge_docs:
+            print(f"SUSE Edge data not found on {docsurl}")
+            return None
+
+        supported_versions_json = edge_docs.get("data-supported-versions")
+
+        if not supported_versions_json:
+            print(f"data-supported-versions not found on {docsurl}")
+            return None
+
+        try:
+            supported_versions = json.loads(supported_versions_json)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON from {docsurl}: {e}")
+            return None
+
+        urls = [
+            f"https://documentation.suse.com/suse-edge/{version['name']}/html/edge/id-release-notes.html"
+            for version in supported_versions
+        ]
         return urls
 
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching URL: {e}")
-        return None
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"An unexpected error occurred fetching {docsurl}: {e}")
         return None
 
+
+
+def get_all_releases_data():
+    """Retrieves and processes release data from SUSE documentation pages."""
+
+    all_releases = []
+    product_urls = get_urls("https://documentation.suse.com/en-us/?tab=products")
+
+    if product_urls:
+        for product_url in product_urls:
+            try:
+                releases = get_release_data(product_url)
+                if releases:
+                    for release in releases:
+                        version = release["Version"]
+                        url = release["URL"]
+                        processed_data = get_dicts_by_name(release["Data"])
+
+                        if processed_data:
+                            all_releases.append({
+                                "Version": version,
+                                "URL": url,
+                                "Data": processed_data,
+                            })
+
+            except Exception as e:
+                print(f"Error processing URL {product_url}: {e}")
+
+    return all_releases
 
 if __name__ == "__main__":
-
-    urls = get_urls("https://documentation.suse.com/en-us/?tab=products")
-    for url in urls:
-        releases_data = get_release_data(url)
-        for release_data in releases_data:
-            print(release_data["Version"])
-            print(release_data["URL"])
-            data = get_dicts_by_name(release_data["Data"])
-            print(data)
+    print(get_all_releases_data())

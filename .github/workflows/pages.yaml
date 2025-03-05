@@ -47,9 +47,14 @@ jobs:
       - name: Run script
         run: python support-matrix.py
 
+      - name: Move output
+        run: |
+          mkdir -p ./output/
+          mv ./index.html ./output/index.html
+
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' # Only deploy from main branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./output/

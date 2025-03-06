@@ -71,7 +71,7 @@ tbody tr:hover {
   {% for release in data %}
   <div>
     <h2 class="release-header" onclick="toggleTable('table-{{ release.Version }}')">
-      SUSE Edge {{ release.Version }} - <a href="{{ release.URL }}">Release Notes</a>
+      SUSE Edge {{ release.Version }} - <a href="{{ release.URL }}">Release Notes</a> - <a href="./{{ release.Version }}.json">JSON data</a>
       <i class="arrow"></i> <span class="arrow-text"></span>
     </h2>
     <table class="release-table" id="table-{{ release.Version }}">

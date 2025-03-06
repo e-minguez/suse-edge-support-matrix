@@ -2,6 +2,8 @@
 
 This repository contains a script that generates an HTML page displaying the support matrix for SUSE Edge. The support matrix shows the versions of various components (like SLE Micro, SUSE Manager, Rancher, K3s/RKE2, etc.) supported in each SUSE Edge release.
 
+It also creates a json file per SUSE Edge release with the same data.
+
 ## How it works
 
 1. The script scrapes the SUSE Edge documentation pages to extract information about supported components and their versions.

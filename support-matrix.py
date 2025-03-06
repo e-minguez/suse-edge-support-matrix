@@ -264,6 +264,16 @@ def generate_html(template_file, output_file, data):
         print(f"An unexpected error occurred during HTML generation: {e}")
         return ""
 
+def save_json(data):
+    """ Saves a json file per release with the actual content """
+    for release in data:
+        try:
+            with open(f"{release['Version']}.json", 'w', encoding='utf-8') as f:
+                json.dump(release, f, indent=2)
+        except IOError as e:
+            print(f"Error saving JSON file: {e}")
+
 if __name__ == "__main__":
     data=get_all_releases_data()
+    save_json(data)
     generate_html('template.html.j2','index.html',data)

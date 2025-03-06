@@ -51,6 +51,7 @@ jobs:
         run: |
           mkdir -p ./output/
           mv ./index.html ./output/index.html
+          mv ./?.?.?.json ./output/
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' # Only deploy from main branch

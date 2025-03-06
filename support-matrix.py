@@ -106,6 +106,7 @@ def get_dicts_by_name(data):
         if "Name" in item:
             name = item["Name"]
             result[name] = item
+            result[name].pop("Name")
         else:
             print("Item missing 'Name' key: %s", item)
     return result
@@ -219,7 +220,6 @@ def get_all_releases_data():
                         version = release["Version"]
                         url = release["URL"]
                         processed_data = get_dicts_by_name(release["Data"])
-
                         if processed_data:
                             all_releases.append({
                                 "Version": version,

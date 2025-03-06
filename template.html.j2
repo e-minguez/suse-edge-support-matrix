@@ -79,14 +79,20 @@ tbody tr:hover {
         <tr>
           <th>Component</th>
           <th>Component Version</th>
+          <th>Helm Chart Version</th>
           <th>Artifact Location</th>
         </tr>
       </thead>
       <tbody>
         {% for component_name, component_data in release.Data.items() %}
         <tr>
-          <td>{{ component_data.Name }}</td>
+          <td>{{ component_name }}</td>
           <td>{{ component_data.Version }}</td>
+          {% if component_data['Helm Chart Version'] %}
+          <td>{{ component_data['Helm Chart Version'] }}</td>
+          {% else %}
+          <td>N/A</td>
+          {% endif %}
           <td>{{ component_data['Artifact Location (URL/Image)'] | safe }}</td>
         </tr>
         {% endfor %}

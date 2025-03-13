@@ -38,8 +38,8 @@
       "Artifact Location (URL/Image)": "<p><span class=\"strong\"><strong>registry.suse.com/rancher/mirrored-neuvector-controller:5.4.0</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/rancher/mirrored-neuvector-enforcer:5.4.0</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/rancher/mirrored-neuvector-manager:5.4.0</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.4.0</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/rancher/mirrored-neuvector-compliance-config:1.0.0</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.2</strong></span><br/>\nregistry.suse.com/rancher/mirrored-neuvector-scanner:latest<br/>\nregistry.suse.com/rancher/mirrored-neuvector-updater:latest</p>"
     },
     "Rancher Turtles (CAPI)": {
-      "Version": "0.11",
-      "Helm Chart Version": "0.3.3",
+      "Version": "0.11.0",
+      "Helm Chart Version": "0.3.3+up0.11.0",
       "Artifact Location (URL/Image)": "<p><span class=\"strong\"><strong>registry.suse.com/edge/3.1/rancher-turtles-chart:0.3.3</strong></span><br/>\nregistry.rancher.com/rancher/rancher/turtles:v0.11.0<br/>\nregistry.suse.com/edge/3.1/cluster-api-operator:0.12.0<br/>\nregistry.suse.com/edge/3.1/cluster-api-controller:1.7.5<br/>\nregistry.suse.com/edge/3.1/cluster-api-provider-metal3:1.7.1<br/>\n<span class=\"strong\"><strong>registry.suse.com/edge/3.1/cluster-api-provider-rke2-bootstrap:0.7.1</strong></span><br/>\n<span class=\"strong\"><strong>registry.suse.com/edge/3.1/cluster-api-provider-rke2-controlplane:0.7.1</strong></span></p>"
     },
     "Metal3": {

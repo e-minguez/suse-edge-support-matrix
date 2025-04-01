@@ -41,6 +41,23 @@ def get_components_versions_subsection(release_section):
         print(f"An error occurred: {e}")
         return None
 
+def get_availability_date(release_section):
+    """
+    Gets the "availability date" from the release section
+    """
+    date_pattern = r'\d{1,2}(?:st|nd|rd|th) [A-Za-z]+ \d{4}'
+    try:
+        date_text_search = release_section.find(string=re.compile(r'Availability Date:'))
+        if date_text_search:
+            date_match = re.findall(date_pattern, date_text_search)
+            if date_match:
+                return date_match[0]
+        return None
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
 
 def get_components_versions_tables_from_section(section):
     """
@@ -137,6 +154,8 @@ def get_release_data(url):
 
                 components_section = get_components_versions_subsection(section)
 
+                availability_date = get_availability_date(section)
+
                 if not components_section:
                     print(f"No components section found for {release_title} in {url}")
                     continue
@@ -156,7 +175,7 @@ def get_release_data(url):
                     if table_data:
                         all_table_data.extend(table_data)
 
-                releases_data.append({"Version": release_version, "URL": release_url, "Data": all_table_data})
+                releases_data.append({"Version": release_version, "URL": release_url, "AvailabilityDate": availability_date, "Data": all_table_data})
 
             except Exception as inner_e:
                 print(f"Error processing release section in {url}: {inner_e}")
@@ -219,11 +238,13 @@ def get_all_releases_data():
                     for release in releases:
                         version = release["Version"]
                         url = release["URL"]
+                        availability_date = release["AvailabilityDate"]
                         processed_data = get_dicts_by_name(release["Data"])
                         if processed_data:
                             all_releases.append({
                                 "Version": version,
                                 "URL": url,
+                                "AvailabilityDate": availability_date,
                                 "Data": processed_data,
                             })
 

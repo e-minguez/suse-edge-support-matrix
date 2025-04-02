@@ -1,0 +1,3252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" type="text/xml" title="Profiling step"?>
+<!DOCTYPE article>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.2" xml:id="article-installation" xml:lang="en">
+  <title>SUSE Edge support matrix</title>
+  <info>
+    <date>2025-04-02 08:15:20 </date>
+    <abstract>
+      <para>The following tables describe the individual components that make up the SUSE Edge releases, including the version, the Helm chart version (if applicable), and from where the released artifact can be pulled in the binary format. this information is also provided for processing in JSON format.</para>
+      <para>
+        <link xlink:href="https://documentation.suse.com/suse-edge/">https://documentation.suse.com/suse-edge/</link>
+      </para>
+    </abstract>
+    <meta name="title" its:translate="yes">SUSE Edge support matrix</meta>
+    <meta name="series" its:translate="no">Products &amp; Solutions</meta>
+    <meta name="description" its:translate="yes">A complete list of components for all SUSE Edge releases</meta>
+    <meta name="social-descr" its:translate="yes">List of components for all SUSE Edge releases</meta>
+    <meta name="task" its:translate="no">
+      <phrase>Implementation</phrase>
+    </meta>
+  </info>
+  <sect1 xml:id="edge-320">
+    <title>Release 3.2.0</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.2/html/edge/id-release-notes.html#id-components-versions">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SUSE Linux Micro</para>
+            </entry>
+            <entry>
+              <para>6.0 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SUSE Linux Micro Download Page</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-SelfInstall-GM2.install.iso (sha256 bc7c3210c8a9b688d2713ad87f17e2c90cb99fd6dee1db528a5ff7f239cbcf79)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-SelfInstall-GM2.install.iso (sha256 8242895e21745aec15ef526a95272887fa95dd832782b2cea4a95f41493f6648)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-GM2.raw.xz (sha256 7ae13d080e66c8b35624b6566b5eaff0875c8c141d0def9fbaee5876781ed81b)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-GM2.raw.xz (sha256 9a19078c062ab52c62c0254e11f5a5a9fac938fd094abff5aa5eac2ec00b2d4e)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Multi-Linux Manager</para>
+            </entry>
+            <entry>
+              <para>5.0.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Multi-Linux Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.31.3</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.31.3%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.31.3</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.31.3%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.10.1</para>
+            </entry>
+            <entry>
+              <para>2.10.1</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime/index.yaml"></link>
+              </para>
+              <para>Rancher Prime Helm Repository</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.10.1/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.10.1 Container Images</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Storage</para>
+            </entry>
+            <entry>
+              <para>1.7.2</para>
+            </entry>
+            <entry>
+              <para>105.1.0+up1.7.2</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.io/index.yaml"></link>
+              </para>
+              <para>Rancher Charts Helm Repository</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-csi-attacher:v4.7.0</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-csi-provisioner:v4.0.1-20241007</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-csi-resizer:v1.12.0</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-csi-snapshotter:v7.0.2-20241007</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-csi-node-driver-registrar:v2.12.0</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-livenessprobe:v2.14.0</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-backing-image-manager:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-engine:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-instance-manager:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-manager:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-share-manager:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-ui:v1.7.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-support-bundle-kit:v0.0.45</para>
+              <para>
+registry.suse.com/rancher/mirrored-longhornio-longhorn-cli:v1.7.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Security</para>
+            </entry>
+            <entry>
+              <para>5.4.1</para>
+            </entry>
+            <entry>
+              <para>105.0.0+up2.8.3</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.io/index.yaml"></link>
+              </para>
+              <para>Rancher Charts Helm Repository</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-controller:5.4.1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.4.1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.4.1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.2</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.3</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Turtles (CAPI)</para>
+            </entry>
+            <entry>
+              <para>0.14.1</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.14.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/rancher-turtles-chart:302.0.0_up0.14.1</para>
+              <para>
+registry.rancher.com/rancher/rancher/turtles:v0.14.1</para>
+              <para>
+registry.rancher.com/rancher/cluster-api-operator:v0.14.0</para>
+              <para>
+registry.rancher.com/rancher/cluster-api-metal3-controller:v1.8.2</para>
+              <para>
+registry.rancher.com/rancher/cluster-api-metal3-ipam-controller:v1.8.1</para>
+              <para>
+registry.suse.com/rancher/cluster-api-controller:v1.8.4</para>
+              <para>
+registry.suse.com/rancher/cluster-api-provider-rke2-bootstrap:v0.9.0</para>
+              <para>
+registry.suse.com/rancher/cluster-api-provider-rke2-controlplane:v0.9.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.9.0</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.9.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/metal3-chart:302.0.0_up0.9.0</para>
+              <para>
+registry.suse.com/edge/3.2/baremetal-operator:0.8.0</para>
+              <para>
+registry.suse.com/edge/3.2/ironic:26.1.2.0</para>
+              <para>
+registry.suse.com/edge/3.2/ironic-ipa-downloader:3.0.0</para>
+              <para>
+registry.suse.com/edge/3.2/kube-rbac-proxy:0.18.1</para>
+              <para>
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.9</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.14.9</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/metallb-chart:302.0.0_up0.14.9</para>
+              <para>
+registry.suse.com/edge/3.2/metallb-controller:v0.14.8</para>
+              <para>
+registry.suse.com/edge/3.2/metallb-speaker:v0.14.8</para>
+              <para>
+registry.suse.com/edge/3.2/frr:8.4</para>
+              <para>
+registry.suse.com/edge/3.2/frr-k8s:v0.0.14</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.6.5</para>
+            </entry>
+            <entry>
+              <para>1.6.5</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.6.5</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.6.5</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.6.5</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>3.0.0</para>
+            </entry>
+            <entry>
+              <para>3.0.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/ui-plugin-charts/tree/3.2.0/charts/elemental/3.0.0"></link>
+              </para>
+              <para>Elemental Extension Helm Chart</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.1.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/edge-image-builder:1.1.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.1"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.3.1</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/kubevirt-chart:302.0.0_up0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-operator:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-api:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-controller:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportproxy:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportserver:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-handler:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-launcher:1.3.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.2.1</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up1.2.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/kubevirt-dashboard-extension-chart:302.0.0_up1.2.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.60.1</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/cdi-chart:302.0.0_up0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-operator:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-controller:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-importer:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-cloner:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-apiserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadproxy:1.60.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.2.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/endpoint-copier-operator-chart:302.0.0_up0.2.1</para>
+              <para>
+registry.suse.com/edge/3.2/endpoint-copier-operator:0.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/akri-chart:302.0.0_up0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-dashboard-extension-chart:302.0.0_up1.2.1</para>
+              <para>
+registry.suse.com/edge/3.2/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.2/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.4.0</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up1.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/sriov-network-operator-chart:302.0.0_up1.4.0</para>
+              <para>
+registry.suse.com/edge/3.2/sriov-crd-chart:302.0.0_up1.4.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>System Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.14.2</para>
+            </entry>
+            <entry>
+              <para>105.0.1</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.io/index.yaml"></link>
+              </para>
+              <para>Rancher Charts Helm Repository</para>
+              <para>
+registry.suse.com/rancher/system-upgrade-controller:v0.14.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.1.1</para>
+            </entry>
+            <entry>
+              <para>302.0.0+up0.1.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/upgrade-controller-chart:302.0.0_up0.1.1</para>
+              <para>
+registry.suse.com/edge/3.2/upgrade-controller:0.1.1</para>
+              <para>
+registry.suse.com/edge/3.2/kubectl:1.30.3</para>
+              <para>
+registry.suse.com/edge/3.2/release-manifest:3.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Kiwi Builder</para>
+            </entry>
+            <entry>
+              <para>10.1.16.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.2/kiwi-builder:10.1.16.0</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-311">
+    <title>Release 3.1.1</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.1/html/edge/id-release-notes.html#id-components-versions">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>6.0 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-SelfInstall-GM2.install.iso (sha256 bc7c3210c8a9b688d2713ad87f17e2c90cb99fd6dee1db528a5ff7f239cbcf79)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-SelfInstall-GM2.install.iso (sha256 8242895e21745aec15ef526a95272887fa95dd832782b2cea4a95f41493f6648)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-GM2.raw.xz (sha256 7ae13d080e66c8b35624b6566b5eaff0875c8c141d0def9fbaee5876781ed81b)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-GM2.raw.xz (sha256 9a19078c062ab52c62c0254e11f5a5a9fac938fd094abff5aa5eac2ec00b2d4e)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>5.0.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.30.5</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.30.5%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.30.5</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.30.5%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.9.3</para>
+            </entry>
+            <entry>
+              <para>2.9.3</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.9.3/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.9.3 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.7.1</para>
+            </entry>
+            <entry>
+              <para>104.2.0+up1.7.1</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.7.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.7.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.1"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.4.0</para>
+            </entry>
+            <entry>
+              <para>104.0.2+up2.8.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.4.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/rancher/mirrored-neuvector-enforcer:5.4.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/rancher/mirrored-neuvector-manager:5.4.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.4.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/rancher/mirrored-neuvector-compliance-config:1.0.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Turtles (CAPI)</para>
+            </entry>
+            <entry>
+              <para>0.11.0</para>
+            </entry>
+            <entry>
+              <para>0.3.3+up0.11.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/rancher-turtles-chart:0.3.3</para>
+              <para>
+registry.rancher.com/rancher/rancher/turtles:v0.11.0</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-operator:0.12.0</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-controller:1.7.5</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-provider-metal3:1.7.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/cluster-api-provider-rke2-bootstrap:0.7.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/cluster-api-provider-rke2-controlplane:0.7.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.8.3</para>
+            </entry>
+            <entry>
+              <para>0.8.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/metal3-chart:0.8.3</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/baremetal-operator:0.6.2</para>
+              <para>
+registry.suse.com/edge/3.1/ip-address-manager:1.7.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/ironic:24.1.3.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/ironic-ipa-downloader:2.0.1</para>
+              <para>
+registry.suse.com/edge/3.1/kube-rbac-proxy:v0.18.0</para>
+              <para>
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.9</para>
+            </entry>
+            <entry>
+              <para>0.14.9</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/metallb-chart:0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/metallb-controller:v0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/metallb-speaker:v0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/frr:8.4</para>
+              <para>
+registry.suse.com/edge/3.1/frr-k8s:v0.0.14</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.6.4</para>
+            </entry>
+            <entry>
+              <para>104.2.0+up1.6.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.6.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.6.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.6.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>2.0.0</para>
+            </entry>
+            <entry>
+              <para>2.0.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/ui-plugin-charts/tree/2.1.0/charts/elemental/2.0.0"></link>
+              </para>
+              <para>Elemental Extension chart</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/edge-image-builder:1.1.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.3.1</para>
+            </entry>
+            <entry>
+              <para>0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/kubevirt-chart:0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-operator:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-api:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-controller:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportproxy:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportserver:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-handler:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-launcher:1.3.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.1.0</para>
+            </entry>
+            <entry>
+              <para>1.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/kubevirt-dashboard-extension-chart:1.1.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.60.1</para>
+            </entry>
+            <entry>
+              <para>0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/cdi-chart:0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-operator:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-controller:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-importer:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-cloner:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-apiserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadproxy:1.60.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/endpoint-copier-operator:v0.2.1</para>
+              <para>
+registry.suse.com/edge/3.1/endpoint-copier-operator-chart:0.2.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-dashboard-extension-chart:1.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.3.0</para>
+            </entry>
+            <entry>
+              <para>1.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/sriov-network-operator-chart:1.3.0</para>
+              <para>
+registry.suse.com/edge/3.1/sriov-crd-chart:1.3.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>System Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.13.4</para>
+            </entry>
+            <entry>
+              <para>104.0.0+up0.7.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.io"></link>
+              </para>
+              <para>System Upgrade Controller chart</para>
+              <para>
+registry.suse.com/rancher/system-upgrade-controller:v0.13.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.1.0</para>
+            </entry>
+            <entry>
+              <para>0.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/upgrade-controller-chart:0.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/upgrade-controller:0.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/kubectl:1.30.3</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/3.1/release-manifest:3.1.1</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-310">
+    <title>Release 3.1.0</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.1/html/edge/id-release-notes.html#id-components-versions-2">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>6.0 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-SelfInstall-GM2.install.iso (sha256 bc7c3210c8a9b688d2713ad87f17e2c90cb99fd6dee1db528a5ff7f239cbcf79)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-SelfInstall-GM2.install.iso (sha256 8242895e21745aec15ef526a95272887fa95dd832782b2cea4a95f41493f6648)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-GM2.raw.xz (sha256 7ae13d080e66c8b35624b6566b5eaff0875c8c141d0def9fbaee5876781ed81b)</para>
+              <para>
+SL-Micro.x86_64-6.0-Base-RT-GM2.raw.xz (sha256 9a19078c062ab52c62c0254e11f5a5a9fac938fd094abff5aa5eac2ec00b2d4e)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>5.0.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.30.3</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.30.3%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.30.3</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.30.3%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.9.1</para>
+            </entry>
+            <entry>
+              <para>2.9.1</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.9.1/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.9.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.7.1</para>
+            </entry>
+            <entry>
+              <para>104.2.0+up1.7.1</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.7.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.7.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.1"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.3.4</para>
+            </entry>
+            <entry>
+              <para>104.0.1+up2.7.9</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.3.4</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.3.4</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.3.4</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.4</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.1-s1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Turtles (CAPI)</para>
+            </entry>
+            <entry>
+              <para>0.11</para>
+            </entry>
+            <entry>
+              <para>0.3.2</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/rancher-turtles-chart:0.3.2</para>
+              <para>
+registry.rancher.com/rancher/rancher/turtles:v0.11.0</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-operator:0.12.0</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-controller:1.7.5</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-provider-metal3:1.7.1</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-provider-rke2-bootstrap:0.7.0</para>
+              <para>
+registry.suse.com/edge/3.1/cluster-api-provider-rke2-controlplane:0.7.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.8.1</para>
+            </entry>
+            <entry>
+              <para>0.8.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/metal3-chart:0.8.1</para>
+              <para>
+registry.suse.com/edge/3.1/baremetal-operator:0.6.1</para>
+              <para>
+registry.suse.com/edge/3.1/ip-address-manager:1.7.1</para>
+              <para>
+registry.suse.com/edge/3.1/ironic:24.1.2.0</para>
+              <para>
+registry.suse.com/edge/3.1/ironic-ipa-downloader:2.0.0</para>
+              <para>
+registry.suse.com/edge/3.1/kube-rbac-proxy:v0.18.0</para>
+              <para>
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.9</para>
+            </entry>
+            <entry>
+              <para>0.14.9</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/metallb-chart:0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/metallb-controller:v0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/metallb-speaker:v0.14.9</para>
+              <para>
+registry.suse.com/edge/3.1/frr:8.4</para>
+              <para>
+registry.suse.com/edge/3.1/frr-k8s:v0.0.14</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.6.4</para>
+            </entry>
+            <entry>
+              <para>104.2.0+up1.6.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.6.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.6.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.6.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>2.0.0</para>
+            </entry>
+            <entry>
+              <para>2.0.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/ui-plugin-charts/tree/2.1.0/charts/elemental/2.0.0"></link>
+              </para>
+              <para>Elemental Extension chart</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/edge-image-builder:1.1.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.3.1</para>
+            </entry>
+            <entry>
+              <para>0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/kubevirt-chart:0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-operator:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-api:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-controller:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportproxy:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-exportserver:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-handler:1.3.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/virt-launcher:1.3.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.1.0</para>
+            </entry>
+            <entry>
+              <para>1.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/kubevirt-dashboard-extension-chart:1.1.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.60.1</para>
+            </entry>
+            <entry>
+              <para>0.4.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/cdi-chart:0.4.0</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-operator:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-controller:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-importer:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-cloner:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-apiserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadserver:1.60.1</para>
+              <para>
+registry.suse.com/suse/sles/15.6/cdi-uploadproxy:1.60.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/endpoint-copier-operator:v0.2.1</para>
+              <para>
+registry.suse.com/edge/3.1/endpoint-copier-operator-chart:0.2.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-dashboard-extension-chart:1.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/3.1/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.3.0</para>
+            </entry>
+            <entry>
+              <para>1.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/sriov-network-operator-chart:1.3.0</para>
+              <para>
+registry.suse.com/edge/3.1/sriov-crd-chart:1.3.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>System Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.13.4</para>
+            </entry>
+            <entry>
+              <para>104.0.0+up0.7.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://charts.rancher.io"></link>
+              </para>
+              <para>System Upgrade Controller chart</para>
+              <para>
+registry.suse.com/rancher/system-upgrade-controller:v0.13.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Upgrade Controller</para>
+            </entry>
+            <entry>
+              <para>0.1.0</para>
+            </entry>
+            <entry>
+              <para>0.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/3.1/upgrade-controller-chart:0.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/upgrade-controller:0.1.0</para>
+              <para>
+registry.suse.com/edge/3.1/kubectl:1.30.3</para>
+              <para>
+registry.suse.com/edge/3.1/release-manifest:3.1.0</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-303">
+    <title>Release 3.0.3</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.0/html/edge/id-release-notes.html#id-components-versions">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>5.5 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-SelfInstall-GM2.install.iso (sha256 4f672a4a0f8ec421e7c25797def05598037c56b7f306283566a9f921bdce904a)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-SelfInstall-GM2.install.iso (sha256 527a5a7cdbf11e3e6238e386533755257676ad8b4c80be3b159d0904cb637678)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-GM.raw.xz (sha256 13243a737ca219bad6a7aa41fa747c06e8b825fef10a756cf4d575f4493ed68b)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-GM.raw.xz (sha256 6c2af94e7ac785c8f6a276032c8e6a4b493c294e6cd72809c75089522f01bc93)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>4.3.11</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.28.13</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.28.13%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.28.13</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.28.13%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.8.8</para>
+            </entry>
+            <entry>
+              <para>2.8.8</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://prime.ribs.rancher.io/rancher/v2.8.8/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.8.8 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.6.1</para>
+            </entry>
+            <entry>
+              <para>103.3.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.6.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.0"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.3.2</para>
+            </entry>
+            <entry>
+              <para>103.0.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.2</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.1-s1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cluster API (CAPI)</para>
+            </entry>
+            <entry>
+              <para>1.6.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cluster-api-controller:1.6.2</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-metal3:1.6.0</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-bootstrap:0.4.1</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-controlplane:0.4.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.7.4</para>
+            </entry>
+            <entry>
+              <para>0.7.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metal3-chart:0.7.4</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/baremetal-operator:0.5.2</para>
+              <para>
+registry.suse.com/edge/ip-address-manager:1.6.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/ironic:23.0.3.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/ironic-ipa-downloader:1.3.5</para>
+              <para>
+registry.suse.com/edge/kube-rbac-proxy:v0.14.2 +.1
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metallb-chart:0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-controller:v0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-speaker:v0.14.3</para>
+              <para>
+registry.suse.com/edge/frr:8.4</para>
+              <para>
+registry.suse.com/edge/frr-k8s:v0.0.8</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.4.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.0.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/edge-image-builder:1.0.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.2.2</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-chart:0.3.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-operator:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-api:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-controller:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportproxy:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportserver:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-handler:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-launcher:1.2.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-dashboard-extension-chart:1.0.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.59.0</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cdi-chart:0.3.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-operator:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-controller:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-importer:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-cloner:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-apiserver:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadserver:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadproxy:1.59.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/endpoint-copier-operator:v0.2.0</para>
+              <para>
+registry.suse.com/edge/endpoint-copier-operator-chart:0.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-dashboard-extension-chart:1.0.0</para>
+              <para>
+registry.suse.com/edge/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.2.2</para>
+            </entry>
+            <entry>
+              <para>1.2.2+up0.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/sriov-network-operator-chart:1.2.2</para>
+              <para>
+registry.suse.com/edge/sriov-crd-chart:1.2.2</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-302">
+    <title>Release 3.0.2</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.0/html/edge/id-release-notes.html#id-components-versions-2">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>5.5 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-SelfInstall-GM2.install.iso (sha256 4f672a4a0f8ec421e7c25797def05598037c56b7f306283566a9f921bdce904a)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-SelfInstall-GM2.install.iso (sha256 527a5a7cdbf11e3e6238e386533755257676ad8b4c80be3b159d0904cb637678)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-GM.raw.xz (sha256 13243a737ca219bad6a7aa41fa747c06e8b825fef10a756cf4d575f4493ed68b)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-GM.raw.xz (sha256 6c2af94e7ac785c8f6a276032c8e6a4b493c294e6cd72809c75089522f01bc93)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>4.3.11</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.28.10</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.28.10%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.28.10</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.28.10%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.8.5</para>
+            </entry>
+            <entry>
+              <para>2.8.5</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.8.5/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.8.5 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.6.1</para>
+            </entry>
+            <entry>
+              <para>103.3.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.6.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.0"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.3.2</para>
+            </entry>
+            <entry>
+              <para>103.0.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.2</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.1-s1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cluster API (CAPI)</para>
+            </entry>
+            <entry>
+              <para>1.6.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cluster-api-controller:1.6.2</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-metal3:1.6.0</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/cluster-api-provider-rke2-bootstrap:0.4.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/cluster-api-provider-rke2-controlplane:0.4.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.7.3</para>
+            </entry>
+            <entry>
+              <para>0.7.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metal3-chart:0.7.3</para>
+              <para>
+registry.suse.com/edge/baremetal-operator:0.5.1</para>
+              <para>
+registry.suse.com/edge/ip-address-manager:1.6.0</para>
+              <para>
+registry.suse.com/edge/ironic:23.0.2.1</para>
+              <para>
+</para>
+              <para>registry.suse.com/edge/ironic-ipa-downloader:1.3.4</para>
+              <para>
+registry.suse.com/edge/kube-rbac-proxy:v0.14.2 +.1
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metallb-chart:0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-controller:v0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-speaker:v0.14.3</para>
+              <para>
+registry.suse.com/edge/frr:8.4</para>
+              <para>
+registry.suse.com/edge/frr-k8s:v0.0.8</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.4.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.0.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/edge-image-builder:1.0.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.2.2</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-chart:0.3.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-operator:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-api:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-controller:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportproxy:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportserver:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-handler:1.2.2</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-launcher:1.2.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-dashboard-extension-chart:1.0.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.59.0</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cdi-chart:0.3.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-operator:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-controller:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-importer:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-cloner:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-apiserver:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadserver:1.59.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadproxy:1.59.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/endpoint-copier-operator:v0.2.0</para>
+              <para>
+registry.suse.com/edge/endpoint-copier-operator-chart:0.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-dashboard-extension-chart:1.0.0</para>
+              <para>
+registry.suse.com/edge/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.2.2</para>
+            </entry>
+            <entry>
+              <para>1.2.2+up0.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/sriov-network-operator-chart:1.2.2</para>
+              <para>
+registry.suse.com/edge/sriov-crd-chart:1.2.2</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-301">
+    <title>Release 3.0.1</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.0/html/edge/id-release-notes.html#id-components-versions-3">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>5.5 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-SelfInstall-GM2.install.iso (sha256 4f672a4a0f8ec421e7c25797def05598037c56b7f306283566a9f921bdce904a)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-SelfInstall-GM2.install.iso (sha256 527a5a7cdbf11e3e6238e386533755257676ad8b4c80be3b159d0904cb637678)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-GM.raw.xz (sha256 13243a737ca219bad6a7aa41fa747c06e8b825fef10a756cf4d575f4493ed68b)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-GM.raw.xz (sha256 6c2af94e7ac785c8f6a276032c8e6a4b493c294e6cd72809c75089522f01bc93)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>4.3.11</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.28.9</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.28.9%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.28.9</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.28.9%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.8.4</para>
+            </entry>
+            <entry>
+              <para>2.8.4</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.8.4/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.8.4 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.6.1</para>
+            </entry>
+            <entry>
+              <para>103.3.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.6.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.3.0</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.3.0"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.3.2</para>
+            </entry>
+            <entry>
+              <para>103.0.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.2</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.1-s1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cluster API (CAPI)</para>
+            </entry>
+            <entry>
+              <para>1.6.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cluster-api-controller:1.6.2</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-metal3:1.6.0</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-bootstrap:0.2.6</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-controlplane:0.2.6</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.7.1</para>
+            </entry>
+            <entry>
+              <para>0.7.1</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metal3-chart:0.7.1</para>
+              <para>
+registry.suse.com/edge/baremetal-operator:0.5.1</para>
+              <para>
+registry.suse.com/edge/ip-address-manager:1.6.0</para>
+              <para>
+registry.suse.com/edge/ironic:23.0.2.1</para>
+              <para>
+registry.suse.com/edge/ironic-ipa-downloader:1.3.2</para>
+              <para>
+registry.suse.com/edge/kube-rbac-proxy:v0.14.2 +.1
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metallb-chart:0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-controller:v0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-speaker:v0.14.3</para>
+              <para>
+registry.suse.com/edge/frr:8.4</para>
+              <para>
+registry.suse.com/edge/frr-k8s:v0.0.8</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>1.4.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.4.4</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.4.4</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.0.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/edge-image-builder:1.0.2</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.1.1</para>
+            </entry>
+            <entry>
+              <para>0.2.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-chart:0.2.4</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-operator:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-api:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-controller:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportproxy:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportserver:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-handler:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-dashboard-extension-chart:1.0.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.58.0</para>
+            </entry>
+            <entry>
+              <para>0.2.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cdi-chart:0.2.3</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-operator:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-controller:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-importer:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-cloner:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-apiserver:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadserver:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadproxy:1.58.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/endpoint-copier-operator:v0.2.0</para>
+              <para>
+registry.suse.com/edge/endpoint-copier-operator-chart:0.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-dashboard-extension-chart:1.0.0</para>
+              <para>
+registry.suse.com/edge/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SR-IOV Network Operator</para>
+            </entry>
+            <entry>
+              <para>1.2.2</para>
+            </entry>
+            <entry>
+              <para>1.2.2+up0.1.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/sriov-network-operator-chart:1.2.2</para>
+              <para>
+registry.suse.com/edge/sriov-crd-chart:1.2.2</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+  <sect1 xml:id="edge-300">
+    <title>Release 3.0.0</title>
+    <para>
+      <link xlink:href="https://documentation.suse.com/suse-edge/3.0/html/edge/id-release-notes.html#id-components-versions-4">Download as JSON</link>
+    </para>
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colnum="1" colname="1" colwidth="20*"/>
+        <colspec colnum="2" colname="2" colwidth="15*"/>
+        <colspec colnum="3" colname="3" colwidth="15*"/>
+        <colspec colnum="4" colname="4" colwidth="50*"/>
+        <thead>
+          <row>
+            <entry>
+              <para>Name</para>
+            </entry>
+            <entry>
+              <para>Version</para>
+            </entry>
+            <entry>
+              <para>Helm Chart Version</para>
+            </entry>
+            <entry>
+              <para>Artifact Location (URL/Image)</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <para>SLE Micro</para>
+            </entry>
+            <entry>
+              <para>5.5 (latest)</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/sle-micro/"></link>
+              </para>
+              <para>SLE Micro Download Page</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-SelfInstall-GM2.install.iso (sha256 4f672a4a0f8ec421e7c25797def05598037c56b7f306283566a9f921bdce904a)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-SelfInstall-GM2.install.iso (sha256 527a5a7cdbf11e3e6238e386533755257676ad8b4c80be3b159d0904cb637678)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-GM.raw.xz (sha256 13243a737ca219bad6a7aa41fa747c06e8b825fef10a756cf4d575f4493ed68b)</para>
+              <para>
+SLE-Micro.x86_64-5.5.0-Default-RT-GM.raw.xz (sha256 6c2af94e7ac785c8f6a276032c8e6a4b493c294e6cd72809c75089522f01bc93)</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>SUSE Manager</para>
+            </entry>
+            <entry>
+              <para>4.3.11</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://www.suse.com/download/suse-manager/"></link>
+              </para>
+              <para>SUSE Manager Download Page</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>K3s</para>
+            </entry>
+            <entry>
+              <para>1.28.8</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/k3s-io/k3s/releases/tag/v1.28.8%2Bk3s1"></link>
+              </para>
+              <para>Upstream K3s Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>RKE2</para>
+            </entry>
+            <entry>
+              <para>1.28.8</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rke2/releases/tag/v1.28.8%2Brke2r1"></link>
+              </para>
+              <para>Upstream RKE2 Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Rancher Prime</para>
+            </entry>
+            <entry>
+              <para>2.8.3</para>
+            </entry>
+            <entry>
+              <para>2.8.3</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/rancher/rancher/releases/download/v2.8.3/rancher-images.txt"></link>
+              </para>
+              <para>Rancher 2.8.3 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.rancher.com/server-charts/prime"></link>
+              </para>
+              <para>Rancher Prime Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Longhorn</para>
+            </entry>
+            <entry>
+              <para>1.6.1</para>
+            </entry>
+            <entry>
+              <para>103.3.0</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/deploy/longhorn-images.txt"></link>
+              </para>
+              <para>Longhorn 1.6.1 Images</para>
+              <para>
+</para>
+              <para>
+                <link xlink:href="https://charts.longhorn.io"></link>
+              </para>
+              <para>Longhorn Helm Repo</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NM Configurator</para>
+            </entry>
+            <entry>
+              <para>0.2.3</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>
+                <link xlink:href="https://github.com/suse-edge/nm-configurator/releases/tag/v0.2.3"></link>
+              </para>
+              <para>NMConfigurator Upstream Release</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>NeuVector</para>
+            </entry>
+            <entry>
+              <para>5.3.2</para>
+            </entry>
+            <entry>
+              <para>103.0.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/mirrored-neuvector-controller:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-enforcer:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-manager:5.3.2</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-prometheus-exporter:5.3.2</para>
+              <para>
+registry.suse.com/rancher mirrored-neuvector-registry-adapter:0.1.1-s1</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-scanner:latest</para>
+              <para>
+registry.suse.com/rancher/mirrored-neuvector-updater:latest</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cluster API (CAPI)</para>
+            </entry>
+            <entry>
+              <para>1.6.2</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cluster-api-controller:1.6.2</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-metal3:1.6.0</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-bootstrap:0.2.6</para>
+              <para>
+registry.suse.com/edge/cluster-api-provider-rke2-controlplane:0.2.6</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Metal3</para>
+            </entry>
+            <entry>
+              <para>0.6.5</para>
+            </entry>
+            <entry>
+              <para>0.6.5</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metal3-chart:0.6.5</para>
+              <para>
+registry.suse.com/edge/baremetal-operator:0.5.1</para>
+              <para>
+registry.suse.com/edge/ip-address-manager:1.6.0</para>
+              <para>
+registry.suse.com/edge/ironic:23.0.1.2</para>
+              <para>
+registry.suse.com/edge/ironic-ipa-downloader:1.3.1</para>
+              <para>
+registry.suse.com/edge/kube-rbac-proxy:v0.14.2</para>
+              <para>
+registry.suse.com/edge/mariadb:10.6.15.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>MetalLB</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>0.14.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/metallb-chart:0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-controller:v0.14.3</para>
+              <para>
+registry.suse.com/edge/metallb-speaker:v0.14.3</para>
+              <para>
+registry.suse.com/edge/frr:8.4</para>
+              <para>
+registry.suse.com/edge/frr-k8s:v0.0.8</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Elemental</para>
+            </entry>
+            <entry>
+              <para>1.4.3</para>
+            </entry>
+            <entry>
+              <para>1.4.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/rancher/elemental-operator-chart:1.4.3</para>
+              <para>
+registry.suse.com/rancher/elemental-operator-crds-chart:1.4.3</para>
+              <para>
+registry.suse.com/rancher/elemental-operator:1.4.3</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Edge Image Builder</para>
+            </entry>
+            <entry>
+              <para>1.0.1</para>
+            </entry>
+            <entry>
+              <para>N/A</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/edge-image-builder:1.0.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt</para>
+            </entry>
+            <entry>
+              <para>1.1.1</para>
+            </entry>
+            <entry>
+              <para>0.2.4</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-chart:0.2.4</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-operator:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-api:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-controller:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportproxy:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-exportserver:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-handler:1.1.1</para>
+              <para>
+registry.suse.com/suse/sles/15.5/virt-launcher:1.1.1</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>KubeVirt Dashboard Extension</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>1.0.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/kubevirt-dashboard-extension-chart:1.0.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Containerized Data Importer</para>
+            </entry>
+            <entry>
+              <para>1.58.0</para>
+            </entry>
+            <entry>
+              <para>0.2.3</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/cdi-chart:0.2.3</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-operator:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-controller:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-importer:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-cloner:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-apiserver:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadserver:1.58.0</para>
+              <para>
+registry.suse.com/suse/sles/15.5/cdi-uploadproxy:1.58.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Endpoint Copier Operator</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>0.2.0</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/endpoint-copier-operator:v0.2.0</para>
+              <para>
+registry.suse.com/edge/endpoint-copier-operator-chart:0.2.0</para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>Akri (Tech Preview)</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>0.12.20</para>
+            </entry>
+            <entry>
+              <para>registry.suse.com/edge/akri-chart:0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-dashboard-extension-chart:1.0.0</para>
+              <para>
+registry.suse.com/edge/akri-agent:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-controller:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-debug-echo-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-onvif-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-opcua-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-udev-discovery-handler:v0.12.20</para>
+              <para>
+registry.suse.com/edge/akri-webhook-configuration:v0.12.20</para>
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+</article>

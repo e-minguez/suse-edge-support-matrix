@@ -52,6 +52,7 @@ jobs:
           mkdir -p ./output/
           mv ./index.html ./output/index.html
           mv ./?.?.?.json ./output/
+          mv ./output.xml ./output/output.xml
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' # Only deploy from main branch

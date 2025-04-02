@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-import re, json, datetime
+import re
+import json
+import datetime
 import requests
 from bs4 import BeautifulSoup
+from lxml import etree
+from lxml.builder import ElementMaker
 from jinja2 import Template
 
 
@@ -11,7 +15,7 @@ def get_release_sections(url):
         'id-release-X-Y-Z' or 'release-notes-X-Y-Z'
     """
     try:
-        response = requests.get(url,timeout=30)
+        response = requests.get(url, timeout=30)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, "html.parser")
 
@@ -41,13 +45,16 @@ def get_components_versions_subsection(release_section):
         print(f"An error occurred: {e}")
         return None
 
+
 def get_availability_date(release_section):
     """
     Gets the "availability date" from the release section
     """
-    date_pattern = r'\d{1,2}(?:st|nd|rd|th) [A-Za-z]+ \d{4}'
+    date_pattern = r"\d{1,2}(?:st|nd|rd|th) [A-Za-z]+ \d{4}"
     try:
-        date_text_search = release_section.find(string=re.compile(r'Availability Date:'))
+        date_text_search = release_section.find(
+            string=re.compile(r"Availability Date:")
+        )
         if date_text_search:
             date_match = re.findall(date_pattern, date_text_search)
             if date_match:
@@ -119,7 +126,7 @@ def get_dicts_by_name(data):
     result: Dict[str, Dict[str, Any]] = {}
     for item in data:
         if not isinstance(item, dict):
-            continue #skip non dict items
+            continue  # skip non dict items
         if "Name" in item:
             name = item["Name"]
             result[name] = item
@@ -130,7 +137,7 @@ def get_dicts_by_name(data):
 
 
 def get_release_data(url):
-    """ Retrieves release data from a given URL. """
+    """Retrieves release data from a given URL."""
     try:
         release_sections = get_release_sections(url)
 
@@ -165,17 +172,28 @@ def get_release_data(url):
                 tables = get_components_versions_tables_from_section(components_section)
 
                 if not tables:
-                    print(f"No matching tables found in section {release_title} in {url}")
-                    releases_data.append({"Version": release_version, "URL": release_url, "Data": []}) #append empty data
+                    print(
+                        f"No matching tables found in section {release_title} in {url}"
+                    )
+                    releases_data.append(
+                        {"Version": release_version, "URL": release_url, "Data": []}
+                    )  # append empty data
                     continue
 
-                all_table_data = [] #create a list to store data from all tables
+                all_table_data = []  # create a list to store data from all tables
                 for table in tables:
                     table_data = extract_data_from_table(table)
                     if table_data:
                         all_table_data.extend(table_data)
 
-                releases_data.append({"Version": release_version, "URL": release_url, "AvailabilityDate": availability_date, "Data": all_table_data})
+                releases_data.append(
+                    {
+                        "Version": release_version,
+                        "URL": release_url,
+                        "AvailabilityDate": availability_date,
+                        "Data": all_table_data,
+                    }
+                )
 
             except Exception as inner_e:
                 print(f"Error processing release section in {url}: {inner_e}")
@@ -241,17 +259,291 @@ def get_all_releases_data():
                         availability_date = release["AvailabilityDate"]
                         processed_data = get_dicts_by_name(release["Data"])
                         if processed_data:
-                            all_releases.append({
-                                "Version": version,
-                                "URL": url,
-                                "AvailabilityDate": availability_date,
-                                "Data": processed_data,
-                            })
+                            all_releases.append(
+                                {
+                                    "Version": version,
+                                    "URL": url,
+                                    "AvailabilityDate": availability_date,
+                                    "Data": processed_data,
+                                }
+                            )
 
             except Exception as e:
                 print(f"Error processing URL {product_url}: {e}")
 
     return all_releases
+
+
+def convert_date_format(date_string):
+    """
+    Converts a date string in "DDth Month YYYY" format to "YYYY-MM-DD" format.
+
+    Args:
+        date_string (str): The date string to convert.
+
+    Returns:
+        str: The converted date string, or None if the conversion fails.
+    """
+    try:
+        clean_string = re.sub(r"(\d)(st|nd|rd|th)", r"\1", date_string)
+        date_object = datetime.datetime.strptime(clean_string, "%d %B %Y")
+        return date_object.strftime("%Y-%m-%d")
+    except ValueError:
+        return None
+
+
+def create_xml_with_elementmaker(data):
+    """Creates the main XML structure."""
+
+    E = ElementMaker(
+        namespace="http://docbook.org/ns/docbook",
+        nsmap={
+            None: "http://docbook.org/ns/docbook",
+            "its": "http://www.w3.org/2005/11/its",
+            "xi": "http://www.w3.org/2001/XInclude",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "xml": "http://www.w3.org/XML/1998/namespace",
+        },
+    )
+
+    ARTICLE = E.article
+    TITLE = E.title
+    INFO = E.info
+    DATE = E.date
+    ABSTRACT = E.abstract
+    PARA = E.para
+    LINK = E.link
+    META = E.meta
+    NAME = E.name
+    VALUE = E.value
+    PHRASE = E.phrase
+    REVHISTORY = E.revhistory
+    REVISION = E.revision
+    REVDESCRIPTION = E.revdescription
+
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
+
+    revhistory_element = REVHISTORY(
+        **{"{http://www.w3.org/XML/1998/namespace}id": "rh-edge-support-matrix"}
+    )
+    for release in data:
+        date = convert_date_format(release["AvailabilityDate"])
+        description = f"Added SUSE Edge {release["Version"]}"
+        revhistory_element.append(
+            REVISION(DATE(date), REVDESCRIPTION(PARA(description)))
+        )
+
+    root = ARTICLE(
+        TITLE("SUSE Edge support matrix"),
+        INFO(
+            DATE(now),
+            ABSTRACT(
+                PARA(
+                    "The following tables describe the individual components that make up the SUSE Edge releases, including the version, the Helm chart version (if applicable), and from where the released artifact can be pulled in the binary format. this information is also provided for processing in JSON format."
+                ),
+                PARA(
+                    LINK(
+                        "https://documentation.suse.com/suse-edge/",
+                        **{
+                            "{http://www.w3.org/1999/xlink}href": "https://documentation.suse.com/suse-edge/"
+                        },
+                    )
+                ),
+            ),
+            META(
+                "SUSE Edge support matrix",
+                name="title",
+                **{"{http://www.w3.org/2005/11/its}translate": "yes"},
+            ),
+            META(
+                "Products & Solutions",
+                name="series",
+                **{"{http://www.w3.org/2005/11/its}translate": "no"},
+            ),
+            META(
+                "A complete list of components for all SUSE Edge releases",
+                name="description",
+                **{"{http://www.w3.org/2005/11/its}translate": "yes"},
+            ),
+            META(
+                "List of components for all SUSE Edge releases",
+                name="social-descr",
+                **{"{http://www.w3.org/2005/11/its}translate": "yes"},
+            ),
+            META(
+                PHRASE("Implementation"),
+                name="task",
+                **{"{http://www.w3.org/2005/11/its}translate": "no"},
+            ),
+        ),
+        version="5.2",
+        **{
+            "{http://www.w3.org/XML/1998/namespace}id": "article-installation",
+            "{http://www.w3.org/XML/1998/namespace}lang": "en",
+        },
+    )
+    return root
+
+
+def create_sect1_xml(data):
+    """
+    Creates a <sect1> XML structure from the provided data.
+
+    Args:
+        data (dict): The data dictionary containing version information.
+
+    Returns:
+        lxml.etree._Element: The <sect1> element.
+    """
+
+    E = ElementMaker(
+        namespace="http://docbook.org/ns/docbook",
+        nsmap={
+            None: "http://docbook.org/ns/docbook",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "xml": "http://www.w3.org/XML/1998/namespace",
+        },
+    )
+
+    SECT1 = E.sect1
+    TITLE = E.title
+    PARA = E.para
+    LINK = E.link
+    INFORMALTABLE = E.informaltable
+    TGROUP = E.tgroup
+    COLSPEC = E.colspec
+    THEAD = E.thead
+    ROW = E.row
+    ENTRY = E.entry
+    TBODY = E.tbody
+
+    title = f"Release {data["Version"]}"
+    # Extract version and remove dots for xml:id
+    version = data.get("Version", "Unknown")
+    sect1_id = "edge-" + version.replace(".", "")
+    json_link = "TBD"
+
+    root = SECT1(
+        TITLE(f"Release {version}"),
+        PARA(
+            LINK(
+                "Download as JSON",
+                **{"{http://www.w3.org/1999/xlink}href": data.get("URL", "#")},
+            )
+        ),
+        INFORMALTABLE(
+            TGROUP(
+                COLSPEC(colnum="1", colname="1", colwidth="20*"),
+                COLSPEC(colnum="2", colname="2", colwidth="15*"),
+                COLSPEC(colnum="3", colname="3", colwidth="15*"),
+                COLSPEC(colnum="4", colname="4", colwidth="50*"),
+                THEAD(
+                    ROW(
+                        ENTRY(PARA("Name")),
+                        ENTRY(PARA("Version")),
+                        ENTRY(PARA("Helm Chart Version")),
+                        ENTRY(PARA("Artifact Location (URL/Image)")),
+                    )
+                ),
+                TBODY(
+                    *[
+                        create_row_from_component(E, component_name, component_data)
+                        for component_name, component_data in data.get(
+                            "Data", {}
+                        ).items()
+                    ]
+                ),
+                cols="4",
+            )
+        ),
+        **{"{http://www.w3.org/XML/1998/namespace}id": sect1_id},
+    )
+
+    return root
+
+
+def create_row_from_component(E, component_name, component_data):
+    """
+    Creates a <tbody> <row> element for a component.
+
+    Args:
+        E (ElementMaker): The ElementMaker instance.
+        component_name (str): The name of the component.
+        component_data (dict): The component's data.
+
+    Returns:
+        lxml.etree._Element: The <tbody> <row> element.
+    """
+
+    ROW = E.row
+    ENTRY = E.entry
+    PARA = E.para
+
+    name = component_name
+    version = component_data.get("Version", "N/A")
+    helm_chart_version = component_data.get("Helm Chart Version", "N/A")
+    artifact_location = component_data.get("Artifact Location (URL/Image)", "")
+
+    # Handle Artifact Location (URL/Image) - Parse HTML-like strings
+    artifact_elements = []
+    if artifact_location:
+        # Simple HTML-like tag parsing (very basic, adjust if needed)
+        for part in re.split(r"(<[^>]+>)", artifact_location):
+            if part.startswith("<a"):
+                match = re.search(r'href="([^"]+)"', part)
+                if match:
+                    href = match.group(1)
+                    text = re.sub(r"<[^>]+>", "", part)  # Remove tags
+                    artifact_elements.append(
+                        PARA(
+                            E.link(text, **{"{http://www.w3.org/1999/xlink}href": href})
+                        )
+                    )
+            elif part and not part.startswith("<"):
+                for subpart in part.split("<br/>"):
+                    artifact_elements.append(PARA(subpart))
+
+    return ROW(
+        ENTRY(PARA(name)),
+        ENTRY(PARA(version)),
+        ENTRY(PARA(helm_chart_version)),
+        ENTRY(*artifact_elements),
+    )
+
+
+def save_json(data):
+    """Saves a json file per release with the actual content"""
+    for release in data:
+        try:
+            with open(f"{release['Version']}.json", "w", encoding="utf-8") as f:
+                json.dump(release, f, indent=2)
+        except IOError as e:
+            print(f"Error saving JSON file: {e}")
+
+
+def save_xml(data):
+    root = create_xml_with_elementmaker(data)
+    for release in data:
+        # Generate and inject sect1 sections
+        root.append(create_sect1_xml(release))
+
+    # Convert the XML tree to a string
+    declaration = '<?xml version="1.0" encoding="utf-8"?>\n'
+    stylesheet_pi = '<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl" type="text/xml" title="Profiling step"?>\n'
+    doctype = "<!DOCTYPE article>\n"
+    xml_string = etree.tostring(root, encoding="utf-8", pretty_print=True).decode(
+        "utf-8"
+    )
+
+    output_file = "output.xml"
+    try:
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(declaration + stylesheet_pi + doctype + xml_string)
+    except IOError as e:
+        print(f"Error writing to {output_file}: {e}")
+    except Exception as e:
+        print(f"An unexpected error occured: {e}")
+
 
 def generate_html(template_file, output_file, data):
     """
@@ -266,14 +558,14 @@ def generate_html(template_file, output_file, data):
         The path of the generated HTML file, or an empty string on error.
     """
     try:
-        with open(template_file, 'r', encoding='utf-8') as file:
+        with open(template_file, "r", encoding="utf-8") as file:
             template_content = file.read()
 
         template = Template(template_content)
         generation_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S %Z")
-        rendered_html = template.render(data=data,generation_time=generation_time)
+        rendered_html = template.render(data=data, generation_time=generation_time)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             f.write(rendered_html)
 
         return output_file
@@ -285,16 +577,9 @@ def generate_html(template_file, output_file, data):
         print(f"An unexpected error occurred during HTML generation: {e}")
         return ""
 
-def save_json(data):
-    """ Saves a json file per release with the actual content """
-    for release in data:
-        try:
-            with open(f"{release['Version']}.json", 'w', encoding='utf-8') as f:
-                json.dump(release, f, indent=2)
-        except IOError as e:
-            print(f"Error saving JSON file: {e}")
 
 if __name__ == "__main__":
-    data=get_all_releases_data()
+    data = get_all_releases_data()
     save_json(data)
-    generate_html('template.html.j2','index.html',data)
+    save_xml(data)
+    generate_html("template.html.j2", "index.html", data)

@@ -4,7 +4,7 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:its="http://www.w3.org/2005/11/its" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.2" xml:id="article-installation" xml:lang="en">
   <title>SUSE Edge support matrix</title>
   <info>
-    <date>2025-04-04 20:58:56 </date>
+    <date>2025-04-04 21:59:01 </date>
     <abstract>
       <para>The following tables describe the individual components that make up the SUSE Edge releases, including the version, the Helm chart version (if applicable), and from where the released artifact can be pulled in the binary format. this information is also provided for processing in JSON format.</para>
       <para>
